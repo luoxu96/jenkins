@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="js/jquery.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/messages_zh.js"></script>
+<script src="js/jquery-3.0.0.min.js"></script>
+<script src="js/Validform.js"></script>
+<script src="js/jquery-1.11.1.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>学习jqueryValidata</title>
+</head>
+<body>
+    <form action="LoginInfo" method="post" id="dd" >
+        <fieldset>
+            <legend>登录</legend>
+            <div>账号：<input type="text" id="name" required="你个憨包，喊你输账号啊" oninvalid="setCustomValidity('你个憨包，喊你输账号啊');" oninput="setCustomValidity('');" /></div>
+            <div>密码：<input type="password" id="password" number/></div>
+            <div><input type="submit" value="提交" /></div>
+        </fieldset>
+    </form>
+<script>
+    function tijiao() {
+        $("#dd").Validform({
+            ajaxPost:true,
+            tiptype:2,
+            callback:function(data){
+               if(data.status==success){
+                   alert("登录成功");
+               }else{
+                   alert("登录失败")
+               }
+            }
+        });
+    }
+</script>
+</body>
+</html>

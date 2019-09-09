@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>这里是登录页面</title>
+</head>
+<script src="js/jquery-3.0.0.min.js"></script>
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<style>
+    .divMax{
+        width: 100%;
+        text-align: center;
+        margin-top: 50px;
+    }
+</style>
+<body>
+    <div class="divMax">
+        <h3>登录</h3>
+        账号：<input type="text" id="name"><br>
+        密码：<input type="text" id="password">
+    </div>
+    <div class="div1" style="text-align: center;margin-top: 10px;">
+        <input type="submit" value="登录" onclick="denglu()">
+        <input type="button" value="注册" onclick="zhuce()">
+    </div>
+<script>
+    //进行登录验证
+    function denglu() {
+        var name=$("#name").val();
+        var password=$("#password").val();
+        if(name==" "||name==""||password==" "||password==""){
+            alert("请填写账号或密码！")
+        }else{
+            $.ajax({
+                type:"POST",
+                url:"LoginInfo",
+                dataType:"json",
+                data:{
+                    "name":$("#name").val(),
+                    "password":$("#password").val(),
+                },
+                success:function (data) {
+                    if(data.status==200){
+                        window.location=("LoginSuccess?name="+name);
+                    }else{
+                        window.alert(data.erroMsg);
+                    }
+                }
+            })
+        }
+    }
+
+    //跳转到注册页面，访问服务器跳转
+    function zhuce() {
+        window.location=("RegisterHtml");
+    }
+</script>
+</body>
+</html>

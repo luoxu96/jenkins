@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>这里是注册页面</title>
+</head>
+<script src="js/jquery-3.0.0.min.js"></script>
+<style>
+    .divMax{
+        width: 100%;
+        text-align: center;
+        margin-top: 50px;
+    }
+    .sex{
+        width: 172px;
+        height: 21px;
+        font-family: "微软雅黑";
+    }
+</style>
+<body>
+    <div class="divMax">
+        <h3>注册</h3>
+        <div>账号：<input type="text" id="name" ><br></div>
+        <div>密码：<input type="text" id="password" ></div>
+        <div>年龄：<input type="text" id="age" ></div>
+        <div>性别：
+            <select id="sex" class="sex">
+                <option selected="selected">男</option>
+                <option>女</option>
+            </select>
+        </div>
+        <div>地址：<input type="text" id="address" ></div>
+    </div>
+    <div class="div1" style="text-align: center;margin-top: 10px;">
+        <input type="submit" value="注册" onclick="zhuce()">
+    </div>
+<script>
+    function zhuce() {
+        var name=$("#name").val();
+        var password=$("#password").val();
+        var age=$("#age").val();
+        var sex=$("#sex").val();
+        var address=$("#address").val();
+
+        if(name==""||name==" "||password==""||password==" "||age==""||age==" "||sex==""||sex==" "||address==""||address==" "){
+            alert("请将注册信息补充完整!");
+        }else{
+            $.ajax({
+                type:"POST",
+                url:"RegisterInfo",
+                dataType:"json",
+                data:{
+                    "name":name,
+                    "password":password,
+                    "age":age,
+                    "sex":sex,
+                    "address":address,
+                },
+                success:function (data) {
+                    alert(data.msg);
+                }
+            })
+        }
+    }
+</script>
+</body>
+</html>

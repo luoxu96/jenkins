@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.study.mapper.UserMapper">
+    <select id="queryUserList"  resultType="com.example.study.entity.User">
+        select
+        id,name,password,age,sex,address
+        from  user
+    </select>
+
+    <select id="queryUserByName" parameterType="java.lang.String" resultType="com.example.study.entity.User">
+        select
+        id,name,password,age,sex,address
+        from  user
+        where  name = #{name}
+    </select>
+
+    <insert id="insertUser" parameterType="com.example.study.entity.User" >
+        insert into user (name,password,age,sex,address) values (#{name},#{password},#{age},#{sex},#{address})
+    </insert>
+</mapper>

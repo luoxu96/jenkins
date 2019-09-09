@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* MyCss */
+body{margin:0;}
+a.btn{*height:21px;}
+.home-div{clear:both;overflow: hidden;padding-bottom:40px;}
+.home-div div.f-l,.home-div div.f-r{width:49%;}
+.home-div h2{font-size:14px;height:40px;line-height:40px;background:#f5fafe;padding:0;padding-left:20px;color:#000;font-weight:bold;}
+.home-div li{padding:0 20px;border-bottom:1px dashed #ddd;line-height:35px;clear:both;overflow: hidden;}
+.home-div li a{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:68%;}
+.home-div li span{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width:30%;}
+#Hui-nav li{*display:inline;*zoom: 1;}
+#Hui-nav li li{*display:block;}
+.Hui-order{padding:0 10px;}
+.Hui-order .badge{font-size: 12px;font-weight: normal;left:45px;padding: 1px 5px;position: absolute;top: 4px;}
+.radio-box{*display:inline;zoom:1;*line-height:31px;*vertical-align:middle;}
+#form-recharge-add .radio-box{padding-bottom:5px;}
+#form-recharge-add .radio-box input{vertical-align:middle;}
+#form-recharge-add .radio-box img{vertical-align:middle;}
+#form-recharge-add .iradio-blue{top:10px;}
+#msg-detail h2{font-size:16px;line-height:30px;height:30px;padding:0;padding-bottom:10px;}
+#msg-detail hr{color:#ccc;}
+#msg-detail p{text-indent:2em;padding-top:10px;}
+.displayn{display:none;}
+.account table{margin-top:20px;}
+.account table td{height:40px;line-height:40px;padding-left:20px;font-size:14px;}
+.table-bg thead th{font-size:14px;padding-left:20px;}
+#province select{margin-right:10px; width:100px}
+.dis_price span{display:block;cursor:pointer;}
+.dis_price input{text-align:center;display:none;}
+.proown-list{clear: both;overflow: hidden;zoom: 1;}
+.proown-list li{float: left;width:160px;height:150px;padding:10px;}
+.proown-list li:focus{background:#eee}
+.proown-list li img{display:block;}
+.proown-list li span{display:block;line-height:20px;text-align: center;}
+.pro_own #province{display: inline!important;}
+.pro_own label{text-align:right;vertical-align:middle;*line-height:40px;}
+#province select,#province2 select{width:80px;margin-right:0;height:31px;border:1px solid #ddd;}
+.single{border-bottom:1px solid #ddd;padding-bottom:10px;margin-bottom:10px;}
+.single .radio-box{padding-left:5px;padding-right:5px;}
+.input-text{*height:21px;*line-height:21px;}
+.select-box{*padding:0;}
+.select-box .select{*height:31px;*line-height:31px;}
+.input-file{*font-size:14px!important;}
+/* 树状 */
+.ztree{padding:20px!important;}
+.ztree li{line-height:30px!important;}
+.ztree *{font-size:14px!important;}
+.ztree li.powerset{display:inline;white-space:normal;}
+.ztree li a{height:30px!important;line-height:30px;}
+.ztree li.powerset a{white-space:nowrap;}
+.dataTables_wrapper .dataTables_length .select{width:65px;}
+/*横向手机 竖向平板*/
+@media (max-width: 767px) {
+	.home-div div.f-l, .home-div div.f-r{float:none;width:100%}
+}
+/*竖向手机*/
+@media (max-width: 480px) {
+	.home-div div.f-l, .home-div div.f-r{float:none;width:100%}
+}
+
+
+.Huialert{ position:relative;padding:8px 0px 8px 0px;margin-bottom: 5px;margin-top: -10px;margin-right: 40px;text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);background-color: #fcf8e3;border: 1px solid #fbeed5;border-radius: 4px}
+.Huialert, .Huialert h4{color: #c09853}
+.Huialert h4{margin: 0}
+.Huialert-danger, .Huialert-error{color: #b94a48;background-color: #f2dede;border-color: #eed3d7}
+.Huialert-danger h4, .Huialert-error h4{color: #b94a48}
+
+
+
+
+
+
+
+
+
+
