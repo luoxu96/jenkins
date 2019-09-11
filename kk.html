@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<script src="https://cdn.staticfile.org/angular.js/1.4.6/angular.min.js"></script>
+
+<body>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+名:  <input type="text" ng-model="firstName"><br>
+姓:  <input type="text" ng-model="lastName"><br>
+<br>
+
+<!-- 定义一个函数用controller获取到后，通过function实现,并且加上过滤器，把所有字母大写 -->
+用函数合成的姓名：{{name()|uppercase}}
+<br>
+<!-- 通过过滤器将数字类型转为类型 -->
+数量：<input type="number" ng-model="quantity"><br>
+单价：<input type="number" ng-model="price"><br>
+总价：{{(quantity*price) | currency}}
+
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+<!-- 用ng-controller定义一个控制器 -->
+app.controller('myCtrl', function($scope) {
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+	$scope.name=function(){
+		return $scope.firstName+" "+$scope.lastName;
+	};
+	
+	$scope.quantity = 1;
+	$scope.price = 1;
+});
+</script>
+
+</body>
+</html>
